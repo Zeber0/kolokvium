@@ -59,7 +59,7 @@ int main()
         {
             delete* it;
         }
-        for (std::set <Kladovshikov*>::iterator it = db1.begin(); it != db1.end(); ++it)
+        for (std::set <Kladovshikov*>::iterator it = db2.begin(); it != db2.end(); ++it)
         {
             delete* it;
         }
