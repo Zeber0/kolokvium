@@ -17,7 +17,7 @@ public:
     {
         *a = *obj.a;
     }
-    virtual void Copy(std::set <Kladovshikov*>& SET2)
+    virtual void Copy(std::set <Kladovshikov*>& set)
     {
 
     }
@@ -39,21 +39,21 @@ public:
     {
         b = obj.b;
     }
-    void Copy(std::set <Kladovshikov*>& SET2)
+    void Copy(std::set <Kladovshikov*>& set)
     {
-        SET2.insert(new Dmitry(*this));
+        set.insert(new Dmitry(*this));
     }
     ~Dmitry() {}
 };
 int main()
 {
     {
-        std::set <Kladovshikov*> db1, db1;
+        std::set <Kladovshikov*> db1, db2;
         db1.insert(new Kladovshikov());
         db1.insert(new Dmitry());
         for (std::set <Kladovshikov*>::iterator it = db1.begin(); it != db1.end(); ++it)
         {
-            (*it)->Copy(db1);
+            (*it)->Copy(db2);
         }
         for (std::set <Kladovshikov*>::iterator it = db1.begin(); it != db1.end(); ++it)
         {
@@ -64,7 +64,7 @@ int main()
             delete* it;
         }
         db1.clear();
-        db1.clear();
+        db2.clear();
     }
     _CrtDumpMemoryLeaks();
     return 0;
